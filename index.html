@@ -2,14 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming 2026</title>
     <style>
-        body { font-family: Arial; text-align: center; background: #000; color: #fff; }
-        h1 { font-size: 50px; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background:#000 url('my-background.jpg') no-repeat center center fixed;  /* of one less revamp black.PNG */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            animation: fadeIn 3s ease-in-out;
+        }
+        h1 {
+            font-size: 80px;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+        h2 {
+            font-size: 40px;
+            margin: 20px 0;
+            font-weight: normal;
+        }
+        #countdown {
+            font-size: 30px;
+            margin-top: 40px;
+            letter-spacing: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 50px; }
+            h2 { font-size: 28px; }
+            #countdown { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Coming 2026</h1>
-    <p>...Of One Less...</p>
+    <div class="container">
+        <h1>Coming 2026</h1>
+        <h2>...Of One Less...</h2>
+        <div id="countdown"></div>
+    </div>
+
+    <script>
+        // Countdown to Jan 1, 2026
+        const countdownDate = new Date("Jan 1, 2026 00:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "LAUNCHED";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
