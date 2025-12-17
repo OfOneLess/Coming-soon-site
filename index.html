@@ -14,34 +14,43 @@
             background: #000 url('of one less revamp black.PNG') no-repeat center center fixed;
             background-size: cover;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start; /* Changed from center to top */
             align-items: center;
             text-align: center;
             overflow: hidden;
+            padding-top: 10vh; /* Adds space from the very top – adjust this number to move higher/lower */
         }
         .container {
             animation: fadeIn 3s ease-in-out;
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 5vh; /* Extra spacing from top – tweak if needed */
         }
         h1 {
             font-size: 80px;
             margin: 0 0 10px 0;
             text-shadow: 0 0 20px rgba(255,255,255,0.5);
         }
+        h2 {
+            font-size: 40px;
+            margin: 0 0 30px 0;
+            font-weight: normal;
+        }
         #countdown {
-            font-size: 45px;        /* Slightly larger for emphasis */
-            margin-top: 20px;       /* Space above countdown */
-            color: red;             /* Red color as requested */
+            font-size: 36px;
+            margin-top: 20px;
+            color: red;
             letter-spacing: 5px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); /* Optional glow for visibility */
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 768px) {
+            body, html { padding-top: 8vh; }
             h1 { font-size: 50px; }
             h2 { font-size: 28px; }
             #countdown { font-size: 24px; letter-spacing: 3px; }
