@@ -11,7 +11,7 @@
             height: 100%;
             font-family: 'Arial', sans-serif;
             color: #ffffff;
-            background: #000 url('of one less revamp black.PNG') no-repeat center center fixed;
+            background: #000 url('of one less revamp.PNG') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -30,9 +30,9 @@
         }
         h1 {
             font-size: 80px;
-            margin: 0 0 30px 0;  /* Space below for countdown */
-            color: red;                  /* Changed to red */
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow for visibility */
+            margin: 0 0 30px 0;
+            color: red;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
         }
         #countdown {
             font-size: 36px;
@@ -45,10 +45,32 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Social links at bottom */
+        .social-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 10;
+        }
+        .social-bar a img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .social-bar a:hover img {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 15px red);
+        }
         @media (max-width: 768px) {
             body, html { padding-top: 8vh; }
             h1 { font-size: 50px; }
             #countdown { font-size: 24px; letter-spacing: 3px; }
+            .social-bar { gap: 25px; bottom: 15px; }
+            .social-bar a img { width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -56,6 +78,25 @@
     <div class="container">
         <h1>2026 The Year Of One Less</h1>
         <div id="countdown"></div>
+    </div>
+
+    <!-- Social links bar at bottom -->
+    <div class="social-bar">
+        <a href="https://instagram.com/ofoneless" target="_blank">
+            <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Glyph-White-Dark-Background-Logo.wine.svg" alt="Instagram">
+        </a>
+        <a href="https://facebook.com/ofoneless" target="_blank">
+            <img src="https://thumbs.dreamstime.com/b/social-media-logos-facebook-twitter-instagram-youtube-flickr-vector-pg-transparent-background-high-resolution-social-media-logos-203118684.jpg" alt="Facebook">
+        </a>
+        <a href="https://open.spotify.com/artist/7GFPDR9nsnzIJZKroTsMnN" target="_blank">
+            <img src="https://i.pinimg.com/736x/28/fb/97/28fb9745bd2e5ee6acfbe313b585c7f5.jpg" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/us/artist/of-one-less/1776994655" target="_blank">
+            <img src="https://www.nicepng.com/png/detail/776-7768338_this-image-rendered-as-png-in-other-widths.png" alt="Apple Music">
+        </a>
+        <a href="https://music.amazon.com/artists/B0DLGVC93W/of-one-less" target="_blank">
+            <img src="https://assets.stickpng.com/images/62b1e85856b6848f8bec903a.png" alt="Amazon Music">
+        </a>
     </div>
 
     <script>
