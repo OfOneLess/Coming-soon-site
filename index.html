@@ -11,7 +11,7 @@
             height: 100%;
             font-family: 'Arial', sans-serif;
             color: #ffffff;
-            background: #000 url('of one less revamp black.PNG') no-repeat center center fixed;
+            background: #000 url('of one less revamp.PNG') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -37,9 +37,15 @@
         #countdown {
             font-size: 36px;
             margin-top: 20px;
+            margin-bottom: 50px; /* Space before Spotify player */
             color: red;
             letter-spacing: 5px;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+        .spotify-player {
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto 0;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(50px); }
@@ -68,7 +74,8 @@
         @media (max-width: 768px) {
             body, html { padding-top: 8vh; }
             h1 { font-size: 50px; }
-            #countdown { font-size: 24px; letter-spacing: 3px; }
+            #countdown { font-size: 24px; letter-spacing: 3px; margin-bottom: 30px; }
+            .spotify-player { width: 95%; margin: 20px auto 0; }
             .social-bar { gap: 25px; bottom: 15px; }
             .social-bar a img { width: 40px; height: 40px; }
         }
@@ -78,9 +85,14 @@
     <div class="container">
         <h1>2026 The Year Of One Less</h1>
         <div id="countdown"></div>
+
+        <!-- Your exact Spotify embed -->
+        <div class="spotify-player">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7GFPDR9nsnzIJZKroTsMnN?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
     </div>
 
-    <!-- Your exact new social bar with all real links -->
+    <!-- Your social bar -->
     <div class="social-bar">
         <a href="https://instagram.com/ofoneless" target="_blank">
             <img src="https://www.logo.wine/a/logo/Instagram/Instagram-Glyph-White-Dark-Background-Logo.wine.svg" alt="Instagram">
